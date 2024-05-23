@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Page
+
+    </title>
+    <link rel="stylesheet" href="Order.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Box icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <header>
+        <!------------------------------------------Header section starts----------------------------------->
+        <nav class="navbar">
+            <a href="#" class="logo">WaveM<span>art.</span></a>
+    
+            <!-----------------------------------Search Bar--------------------------------------------->
+            <form class="search-bar">
+                <input type="text" placeholder="Search Here...">
+                <label for="search-box" class="fas fa-search"></label>
+            </form>
+    
+            <ul class="nav-links">
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+    
+                <!----------------------------------dropdown menu---------------------------------------------->
+                <li class="dropdown">
+                    <a href="">Products</a>
+                    <ul class="dropdown-content">
+                        <li><a href="Dairy Product.html">Dairy Products</a></li>
+                        <li><a href="Vegetables.html">Vegetables</a></li>
+                        <li><a href="Skin Care.html">Skin Care</a></li>
+                    </ul>
+                </li>
+                <li><a href="Order.html">Order</a></li>
+                <li><a href="Loyalty Registration.html">Loyalty registration</a></li>
+            </ul>
+            <span id="menu-btn" class="material-symbols-outlined">menu</span>
+            <span id="close-btn" class="material-symbols-outlined">close</span>
+        </nav>
+        <a href="Order.html" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+        </a>
+
+    </header>
+    
+    <!--Header section ends-->
+
+<div class="cart-section">
+    <h2>Shopping Cart</h2>
+    <div class="cart-item">
+        <img src="Images\Vegetables\tomatoes.jpg" alt="Product 1">
+        <div class="item-details">
+            <p class="product-name">Green House Tomatoes</p>
+            <p>Rs.500.00 x 1</p>
+        </div>
+    </div>
+    <div class="cart-item">
+        <img src="Images\Skin Care\dior-rosy-glow-blush_20071960_49065338_600-removebg-preview.png" alt="Product 2">
+        <div class="item-details">
+            <p class="product-name">Rosy Glow Blush</p>
+            <p>Rs. 12,886.43 x 1</p>
+        </div>
+    </div>
+    <div class="cart-item">
+        <img src="Images\Dairy Products\choco milk.jpg" alt="Product 3">
+        <div class="item-details">
+            <p class="product-name">Richlife Pas Milk Chocolate 500ml</p>
+            <p>Rs.440.00 x 3</p>
+        </div>
+    </div>
+
+    <div class="cart-total">
+        <p>Total: Rs. 14,706.43</p>
+    </div>
+
+    <a href="#Checkout">
+    <button class="checkout-btn">Checkout</button></a>
+</div>
+    <!--------------------------------Order Page Form----------------------------------->
+    <main>
+    <div class="order-form-container">
+        <h2 id="Checkout">Checkout</h2>
+        <form class="order-form" action="/submit-order" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter email" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" placeholder="Enter address" required>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" placeholder="Enter city" required>
+
+            <label for="branch">Branches:</label>
+            <select id="branch" name="branch" required>
+                <option value="choose-branch">Choose branch</option>
+                <option value="branch1">Colombo</option>
+                <option value="branch2">Kandy</option>
+                <option value="branch3">Kurunegala</option>
+            </select>
+
+            <label for="zip">Zip Code</label>
+            <input type="text" id="zip" name="zip" placeholder="Zip code" required>
+
+            <!-------Payment Methods---------->
+            <label for="payment">Payment</label>
+            <div class="payment-methods">
+                <img src="Images\Order\credit-card-gift-card-visa-stored-value-card-payment-visa-thumbnail-removebg-preview.png" alt="Visa" class="payment-logo">
+                <img src="Images\Order\mastercard-icon-png-5a3556c6e81b34.5328243515134450629507-removebg-preview.png" alt="MasterCard" class="payment-logo">
+                <img src="Images\Order\american-express-payment-credit-card-membership-rewards-money-credit-card-removebg-preview.png" alt="MasterCard" class="payment-logo">
+
+            </div>
+
+            <!------------Credit Card Details--------------->
+            <label for="cc-number">Credit Card Number</label>
+            <input type="text" id="cc-number" name="cc-number" placeholder="Enter Card Number" required>
+
+            <div class="card-details">
+                <label for="exp-month">Month</label>
+                <input type="text" id="exp-month" name="exp-month" placeholder="MM" required>
+
+                <label for="exp-year">Year</label>
+                <input type="text" id="exp-year" name="exp-year" placeholder="YY" required>
+
+                <div class="separator">|</div>
+
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="CVV" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Proceed to Delivery</button>
+        </form>
+    </div>
+    </main>
+
+<!---------------------------------------------Footer section starts------------------------------------------>
+
+<footer class="footer">
+    <section class="container">
+        <section class="row">
+            <section class="footer-col">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="Dairy Product.html">Dairy Products</a></li>
+                    <li><a href="Vegetables.html">Vegetables</a></li>
+                    <li><a href="Skin Care.html">Skin Care</a></li>
+                </ul>
+            </section>
+
+            <section class="footer-col">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="Order.html">Order</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms and Conditions</a></li>
+                </ul>
+            </section>
+
+            <section class="footer-col">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="About.html">Contact Us</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                </ul>
+            </section>
+
+            <section class="footer-col">
+                <h4>Follow Us</h4>
+                <section class="social-links">
+                    <a href="https://web.facebook.com/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://x.com/?lang=en"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://lk.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                </section>
+            </section>
+        </section>
+        <section class="copyright">
+            <p >Copyright &copy; 2024 Wave Mart.All Rights Reserved</p>
+        </section>
+    </section>
+</footer>
+
+<!-------------------------------------------Footer section ends---------------------------------------->
+
+    <script src="script.js"></script>
+</body>
+</html>
