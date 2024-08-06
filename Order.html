@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave Mart</title>
+    <link rel="stylesheet" href="Order.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" >
+    <!--Box icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="icon" type="image/x-icon" href="Images/favicon_io/android-chrome-512x512.png">
+    <link href='Images/favicon_io/favicon-32x32.png' rel='icon' type='image/x-icon'>
+
+</head>
+<body>
+    <header>
+        <!--Header section starts-->
+        <nav class="navbar">
+            <a href="#" class="logo">WaveM<span>art.</span></a>
+    
+            <!--Search Bar-->
+            <form class="search-bar">
+                <input type="text" id="search-box" placeholder="Search Here...">
+                <label for="search-box" class="fas fa-search"></label>
+            </form>
+    
+            <ul class="nav-links">
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+    
+                <!--dropdown menu-->
+                <li class="dropdown"> 
+                    <a href="">Products</a>
+                    <ul class="dropdown-content">
+                        <li><a href="Dairy%20Product.html">Dairy Products</a></li>
+                        <li><a href="Vegetables.html">Vegetables</a></li>
+                        <li><a href="Fruits.html">Fruits</a></li>
+                        <li><a href="Meat%20and%20Seafood.html">Meat and Seafood</a></li>
+                        <li><a href="Baking%20and%20Cooking.html">Baking and Cooking</a></li>
+                    </ul>
+                </li>
+                <li><a href="Order.html">Order</a></li>
+                <li><a href="Loyalty%20Registration.html">Loyalty registration</a></li>
+            </ul>
+            <span id="menu-btn" class="material-symbols-outlined">menu</span>
+            <span id="close-btn" class="material-symbols-outlined">close</span>
+        </nav>
+        <a href="#orderSummary" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+        </a>
+
+    </header>
+
+    <!--Header Section Ends-->
+    
+
+   
+    <main>
+        <!-- Diary Products Section -->
+        <div class="product-section" aria-expanded="false" role="region">
+            <h2 onclick="toggleProducts('dairy-products')">Dairy Products <i class="fas fa-chevron-down dropdown-icon"></i></h2>
+            <div id="dairy-products-grid" class="product-grid" role="region">
+                <div class="product-item">
+                    <img src="Images/Dairy%20Products/Butter.jpg" alt="Butter">
+                    <label for="butter">Pelwatta Butter</label>
+                    <span class="quantity">200</span>
+                    <span class="price">Rs. 850.00</span>
+                    <input type="number" id="butter" name="butter" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Butter', document.getElementById('butter').value, 850)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Dairy%20Products/choco%20milk.jpg" alt="choco-milk">
+                    <label for="choco-milk">Richlife Pas Milk Chocolate</label>
+                    <span class="quantity">500ml</span>
+                    <span class="price">Rs. 440.00</span>
+                    <input type="number" id="choco-milk" name="choco-milk" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Richlife Pas Milk Chocolate', document.getElementById('choco-milk').value, 440)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Dairy%20Products/Cic%20curd.jpg" alt="CIC Curd">
+                    <label for="cic-curd">Cic Curd</label>
+                    <span class="quantity">200g</span>
+                    <span class="price">Rs. 615.00</span>
+                    <input type="number" id="cic-curd" name="cic-curd" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Cic Curd', document.getElementById('cic-curd').value, 615)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Dairy%20Products/curd.jpg" alt="curd">
+                    <label for="curd">Kotmale Curd</label>
+                    <span class="quantity">900g</span>
+                    <span class="price">Rs. 650.00</span>
+                    <input type="number" id="curd" name="curd" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Kotmale Curd', document.getElementById('curd').value, 650)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Dairy%20Products/Happy%20cow.jpg" alt="Cheese">
+                    <label for="happy-cow-cheese">H/Cow Cheese Portion Regular</label>
+                    <span class="quantity">200g</span>
+                    <span class="price">Rs. 1,790.00</span>
+                    <input type="number" id="happy-cow-cheese" name="happy-cow-cheese" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('H/Cow Cheese Portion Regular', document.getElementById('happy-cow-cheese').value, 1790)">Add</button>
+                </div>
+
+
+
+                <div class="product-item">
+                    <img src="Images/Dairy%20Products/kotmale%20edam%20cheese.jpg" alt="edam-cheese">
+                    <label for="edam-cheese">Kotmale Edam Cheese</label>
+                    <span class="quantity">200g</span>
+                    <span class="price">Rs. 1,020.00</span>
+                    <input type="number" id="edam-cheese" name="edam-cheese" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Kotmale Edam Cheese', document.getElementById('edam-cheese').value, 1020)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Dairy%20Products/kotmale%20feta%20cheese%20plain.jpg" alt="feta-cheese">
+                    <label for="feta-cheese">Kotmale Feta Cheese Plain</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 590.00</span>
+                    <input type="number" id="feta-cheese" name="feta-cheese" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Kotmale Feta Cheese Plain', document.getElementById('feta-cheese').value, 590)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Dairy%20Products/kotmale-full-cream-fresh-milk.jpg" alt="fresh-milk">
+                    <label for="fresh-milk">Kotmale Full Cream Fresh Milk</label>
+                    <span class="quantity">1L</span>
+                    <span class="price">Rs. 680.00</span>
+                    <input type="number" id="fresh-milk" name="fresh-milk" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Kotmale Full Cream Fresh Milk', document.getElementById('fresh-milk').value, 680)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Dairy%20Products/low%20fat%20wedges.jpg" alt="low-fat-wedges">
+                    <label for="low-fat-wedges">Kotmale Wedges Low Fat</label>
+                    <span class="quantity">120g</span>
+                    <span class="price">Rs. 580.00</span>
+                    <input type="number" id="low-fat-wedges" name="low-fat-wedges" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Kotmale Wedges Low Fat', document.getElementById('low-fat-wedges').value, 580)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Dairy%20Products/paneer.jpg" alt="paneer">
+                    <label for="paneer">Kotmale Cheese Paneer</label>
+                    <span class="quantity">200g</span>
+                    <span class="price">Rs. 880.00</span>
+                    <input type="number" id="paneer" name="paneer" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Kotmale Cheese Paneer', document.getElementById('paneer').value, 880)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Dairy%20Products/Richlife%20cheese%20slices.jpg" alt="cheese-slice">
+                    <label for="cheese-slice">Richlife Cheese Slices 10S</label>
+                    <span class="quantity">200g</span>
+                    <span class="price">Rs. 980.00</span>
+                    <input type="number" id="cheese-slice" name="cheese-slice" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Richlife Cheese Slices 10S', document.getElementById('cheese-slice').value, 980)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Dairy%20Products/Set%20Yoghurt.jpg" alt="set-yoghurt">
+                    <label for="set-yoghurt">Newdale Set Yoghurt Strawberry</label>
+                    <span class="quantity">80g</span>
+                    <span class="price">Rs. 80.00</span>
+                    <input type="number" id="set-yoghurt" name="set-yoghurt" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Newdale Set Yoghurt Strawberry', document.getElementById('set-yoghurt').value, 80)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Dairy%20Products/spice%20cheese.jpg" alt="spiced-cheese">
+                    <label for="spiced-cheese">Kotmale Processed Cheese Spiced</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 500.00</span>
+                    <input type="number" id="spiced-cheese" name="spiced-cheese" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Kotmale Processed Cheese Spiced', document.getElementById('spiced-cheese').value, 500)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Dairy%20Products/strawberry%20drink.jpg" alt="strw-milk">
+                    <label for="strw-milk">Richlife Pas Milk Strawberry</label>
+                    <span class="quantity">500ml</span>
+                    <span class="price">Rs. 440.00</span>
+                    <input type="number" id="strw-milk" name="strw-milk" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Richlife Pas Milk Strawberry', document.getElementById('strw-milk').value, 440)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Dairy%20Products/Whip%20Cream.jpg" alt="whip-cream">
+                    <label for="whip-cream">Anchor Whip/Cream T/Pack</label>
+                    <span class="quantity">250ml</span>
+                    <span class="price">Rs. 1,050.00</span>
+                    <input type="number" id="whip-cream" name="whip-cream" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Anchor Whip/Cream T/Pack', document.getElementById('whip-cream').value, 1050)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Dairy%20Products/yoghurt%20drink.jpg" alt="yoghurt-drink">
+                    <label for="yoghurt-drink">Anchor D/Yoghurt Vanilla</label>
+                    <span class="quantity">180ml</span>
+                    <span class="price">Rs. 160.00</span>
+                    <input type="number" id="yoghurt-drink" name="yoghurt-drink" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Anchor D/Yoghurt Vanilla', document.getElementById('yoghurt-drink').value, 160)">Add</button>
+                </div>
+            </div>
+        </div>
+
+
+            <!-- Vegetables Section -->
+        <div class="product-section" aria-expanded="false" role="region">
+            <h2 onclick="toggleProducts('vegetables')">Vegetables <i class="fas fa-chevron-down dropdown-icon"></i></h2>
+            <div id="vegetables-grid" class="product-grid">
+                <div class="product-item">
+                    <img src="Images/Vegetables/beans.jpg" alt="beans">
+                    <label for="beans">Green Beans</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 370.00</span>
+                    <input type="number" id="beans" name="beans" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Green Beans', document.getElementById('beans').value, 370)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Vegetables/bell%20pepper.jpg" alt="bell-pepper-red">
+                    <label for="bell-pepper-red">Bell Pepper Red</label>
+                    <span class="quantity">200g</span>
+                    <span class="price">Rs. 810.00</span>
+                    <input type="number" id="bell-pepper-red" name="bell-pepper-red" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Bell Pepper Red', document.getElementById('bell-pepper-red').value, 810)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Vegetables/cabbage.jpg" alt="cabbage">
+                    <label for="cabbage">Cabbage</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 180.00</span>
+                    <input type="number" id="cabbage" name="cabbage" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Cabbage', document.getElementById('cabbage').value, 180)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Vegetables/carrot.jpg" alt="carrot">
+                    <label for="carrot">Carrot</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 260.00</span>
+                    <input type="number" id="carrot" name="carrot" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Carrot', document.getElementById('carrot').value, 260)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Vegetables/cauliflower.jpg" alt="cauliflower">
+                    <label for="cauliflower">Cauliflower</label>
+                    <span class="quantity">1kg</span>
+                    <span class="price">Rs. 1,030.00</span>
+                    <input type="number" id="cauliflower" name="cauliflower" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Cauliflower', document.getElementById('cauliflower').value, 1030)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Vegetables/coconut.jpg" alt="coconut">
+                    <label for="coconut">Coconut</label>
+                    <span class="quantity">1</span>
+                    <span class="price">Rs. 105.00</span>
+                    <input type="number" id="coconut" name="coconut" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Coconut', document.getElementById('coconut').value, 105)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Vegetables/egg%20plant.jpg" alt="egg-plant">
+                    <label for="egg-plant">Egg Plants</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 720.00</span>
+                    <input type="number" id="egg-plant" name="egg-plant" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Egg Plants', document.getElementById('egg-plant').value, 720)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Vegetables/garlic.jpg" alt="garlic">
+                    <label for="garlic">Pre-Packed Garlic</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 990.00</span>
+                    <input type="number" id="garlic" name="garlic" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Pre-Packed Garlic', document.getElementById('garlic').value, 990)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Vegetables/onions.jpg" alt="onions">
+                    <label for="onions">Big Onions</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 380.00</span>
+                    <input type="number" id="onions" name="onions" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Big Onions', document.getElementById('onions').value, 380)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Vegetables/pumpkin.jpg" alt="pumpkin">
+                    <label for="pumpkin">Pumpkin</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 100.00</span>
+                    <input type="number" id="pumpkin" name="pumpkin" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Pumpkin', document.getElementById('pumpkin').value, 100)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Vegetables/salad%20leaves.jpg" alt="salad-leaves">
+                    <label for="salad-leaves">Salad Leaves</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 440.00</span>
+                    <input type="number" id="salad-leaves" name="salad-leaves" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Salad Leaves', document.getElementById('salad-leaves').value, 440)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Vegetables/tomatoes.jpg" alt="tomatoes">
+                    <label for="tomatoes">Green House Tomatoes</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 500.00</span>
+                    <input type="number" id="tomatoes" name="tomatoes" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Green House Tomatoes', document.getElementById('tomatoes').value, 500)">Add</button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Fruits Section -->
+        <div class="product-section" aria-expanded="false" role="region">
+            <h2 onclick="toggleProducts('fruits')">Fruits <i class="fas fa-chevron-down dropdown-icon"></i></h2>
+            <div id="fruits-grid" class="product-grid">
+                <div class="product-item">
+                    <img src="Images/Fruits/avacado.jpg" alt="avacado">
+                    <label for="avacado">Avocado</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 470.00</span>
+                    <input type="number" id="avacado" name="avacado" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Avocado', document.getElementById('avacado').value, 470)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Fruits/banana.jpg" alt="banana">
+                    <label for="banana">Banana</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 250.00</span>
+                    <input type="number" id="banana" name="banana" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Banana', document.getElementById('banana').value, 250)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Fruits/dragon%20fruit.jpg" alt="dragon-fruit">
+                    <label for="dragon-fruit">Dragon Fruit ( Pitaya )</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 1,450.00</span>
+                    <input type="number" id="dragon-fruit" name="dragon-fruit" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Dragon Fruit ( Pitaya )', document.getElementById('dragon-fruit').value, 1450)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Fruits/durian.jpg" alt="durian">
+                    <label for="durian">Durian</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 480.00</span>
+                    <input type="number" id="durian" name="durian" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Durian', document.getElementById('durian').value, 480)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Fruits/grapes.jpg" alt="grapes">
+                    <label for="grapes">Grapes - Red</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 2,010.00</span>
+                    <input type="number" id="grapes" name="grapes" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Grapes - Red', document.getElementById('grapes').value, 2010)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Fruits/green%20apples.jpg" alt="apple-green">
+                    <label for="apple-green">Apple - Green</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 2,100.00</span>
+                    <input type="number" id="apple-green" name="apple-green" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Apple - Green', document.getElementById('apple-green').value, 2100)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Fruits/guava.jpg" alt="guava">
+                    <label for="guava">Guava</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 240.00</span>
+                    <input type="number" id="guava" name="guava" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Guava', document.getElementById('guava').value, 240)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Fruits/magosteen.jpg" alt="mangosteen">
+                    <label for="mangosteen">Mangosteen</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 370.00</span>
+                    <input type="number" id="mangosteen" name="mangosteen" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Mangosteen', document.getElementById('mangosteen').value, 370)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Fruits/mango.jpg" alt="mango">
+                    <label for="mango">Mango - Tjc</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 760.00</span>
+                    <input type="number" id="mango" name="mango" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Mango - Tjc', document.getElementById('mango').value, 760)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Fruits/papaya.jpg" alt="papaya">
+                    <label for="papaya">Papaya</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 170.00</span>
+                    <input type="number" id="papaya" name="papaya" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Papaya', document.getElementById('papaya').value, 170)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Fruits/red%20apple.jpg" alt="apple-red">
+                    <label for="apple-red">Apple - Red</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 2,020.00</span>
+                    <input type="number" id="apple-red" name="apple-red" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Apple - Red', document.getElementById('apple-red').value, 2020)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Fruits/watermelon.jpg" alt="watermelon">
+                    <label for="watermelon">Melon - Red Fantasy</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 120.00</span>
+                    <input type="number" id="watermelon" name="watermelon" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Melon - Red Fantasy', document.getElementById('watermelon').value, 120)">Add</button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Meat and Seafood Section -->
+        <div class="product-section" aria-expanded="false" role="region">
+            <h2 onclick="toggleProducts('meat-seafood')">Meat and Seafood <i class="fas fa-chevron-down dropdown-icon"></i></h2>
+            <div id="meat-seafood-grid" class="product-grid">
+                <div class="product-item">
+                    <img src="Images/Meat%20and%20Seafood/Bairaha%20Whole%20Chicken.jpg" alt="Bairaha Whole Chicken">
+                    <label for="Bairaha-Whole-Chicken">Bairaha Whole Chicken</label>
+                    <span class="quantity">1kg</span>
+                    <span class="price">Rs. 940.00</span>
+                    <input type="number" id="Bairaha-Whole-Chicken" name="Bairaha-Whole-Chicken" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Bairaha Whole Chicken', document.getElementById('Bairaha-Whole-Chicken').value, 940)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Meat%20and%20Seafood/Beef%20Cubes.jpg" alt="Beef Cubes">
+                    <label for="Beef-Cubes">Beef Cubes</label>
+                    <span class="quantity">200g</span>
+                    <span class="price">Rs. 3,130.00</span>
+                    <input type="number" id="Beef-Cubes" name="Beef-Cubes" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Beef Cubes', document.getElementById('Beef-Cubes').value, 3130)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Meat%20and%20Seafood/Chicken%20Drumsticks%20Skinless.jpg" alt="Chicken Drumsticks Skinless">
+                    <label for="Chicken-Drumsticks-Skinless">Chicken Drumsticks Skinless</label>
+                    <span class="quantity">1kg</span>
+                    <span class="price">Rs. 1,520.00</span>
+                    <input type="number" id="Chicken-Drumsticks-Skinless" name="Chicken-Drumsticks-Skinless" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Chicken Drumsticks Skinless', document.getElementById('Chicken-Drumsticks-Skinless').value, 1520)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Meat%20and%20Seafood/Chicken%20Full%20Breast%20Skinless.jpg" alt="Chicken Full Breast Skinless">
+                    <label for="Chicken-Full-Breast-Skinless">Chicken Full Breast Skinless</label>
+                    <span class="quantity">1kg</span>
+                    <span class="price">Rs. 1,980.00</span>
+                    <input type="number" id="Chicken-Full-Breast-Skinless" name="Chicken-Full-Breast-Skinless" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Chicken Full Breast Skinless', document.getElementById('Chicken Full Breast Skinless').value, 1980)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Meat%20and%20Seafood/Chicken%20Thigh%20Skinless.jpg" alt="Chicken Thigh Skinless">
+                    <label for="Chicken-Thigh-Skinless">Chicken Thigh Skinless</label>
+                    <span class="quantity">1kg</span>
+                    <span class="price">Rs. 1,600.00</span>
+                    <input type="number" id="Chicken-Thigh-Skinless" name="Chicken-Thigh-Skinless" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Chicken Thigh Skinless', document.getElementById('Chicken-Thigh-Skinless').value, 1600)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Meat%20and%20Seafood/Chicken%20Whole%20Legs%20Skinless.jpg" alt="Chicken Whole Legs Skinless">
+                    <label for="Chicken-Whole-Legs-Skinless">Chicken Whole Legs Skinless</label>
+                    <span class="quantity">1kg</span>
+                    <span class="price">Rs. 2,080.00</span>
+                    <input type="number" id="Chicken-Whole-Legs-Skinless" name="Chicken-Whole-Legs-Skinless" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Chicken Whole Legs Skinless', document.getElementById('Chicken-Whole-Legs-Skinless').value, 2080)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Meat%20and%20Seafood/Honey%20Glazed%20Chicken%20Ham.jpg" alt="Honey Glazed Chicken Ham">
+                    <label for="Honey-Glazed-Chicken-Ham">Honey Glazed Chicken Ham</label>
+                    <span class="quantity">1kg</span>
+                    <span class="price">Rs. 4,200.00</span>
+                    <input type="number" id="Honey-Glazed-Chicken-Ham" name="Honey-Glazed-Chicken-Ham" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Honey Glazed Chicken Ham', document.getElementById('Honey-Glazed-Chicken-Ham').value, 4200)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Meat%20and%20Seafood/Lamb%20Shoulder.jpg" alt="Lamb Shoulder">
+                    <label for="Lamb-Shoulder">Lamb Shoulder</label>
+                    <span class="quantity">1kg</span>
+                    <span class="price">Rs. 5,500.00</span>
+                    <input type="number" id="Lamb-Shoulder" name="Lamb-Shoulder" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Lamb Shoulder', document.getElementById('Lamb-Shoulder').value, 5500)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Meat%20and%20Seafood/Mutton%20Leg%20Local.jpg" alt="Mutton Leg Local">
+                    <label for="Mutton-Leg-Local">Mutton Leg Local</label>
+                    <span class="quantity">1kg</span>
+                    <span class="price">Rs. 5,580.00</span>
+                    <input type="number" id="Mutton-Leg-Local" name="Mutton-Leg-Local" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Mutton Leg Local', document.getElementById('Mutton-Leg-Local').value, 5580)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Meat%20and%20Seafood/Pork%20Chops.jpg" alt="Pork Chops">
+                    <label for="Pork-Chops">Pork Chops</label>
+                    <span class="quantity">1kg</span>
+                    <span class="price">Rs. 2,600.00</span>
+                    <input type="number" id="Pork-Chops" name="Pork-Chops" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Pork Chops', document.getElementById('Pork-Chops').value, 2600)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Meat%20and%20Seafood/Pork%20Cubes%20Boneless.jpg" alt="Pork Cubes Boneless">
+                    <label for="Pork-Cubes-Boneless">Pork Cubes Boneless</label>
+                    <span class="quantity">1kg</span>
+                    <span class="price">Rs. 2,590.00</span>
+                    <input type="number" id="Pork-Cubes-Boneless" name="Pork--Cubes-Boneless" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Pork Cubes Boneless', document.getElementById('Pork-Cubes-Boneless').value, 2590)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Meat%20and%20Seafood/Roasted%20Turkey%20kg.jpg" alt="Roasted Turkey">
+                    <label for="Roasted-Turkey">Roasted Turkey</label>
+                    <span class="quantity">1kg</span>
+                    <span class="price">Rs. 3,970.00</span>
+                    <input type="number" id="Roasted-Turkey" name="Roasted-Turkey" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Roasted Turkey', document.getElementById('Roasted-Turkey').value, 3970)">Add</button>
+                </div>
+
+            </div>  
+        </div>
+        
+        <!-- Baking and Cooking Section -->
+        <div class="product-section" aria-expanded="false" role="region">
+            <h2 onclick="toggleProducts('baking-cooking')">Baking & Cooking<i class="fas fa-chevron-down dropdown-icon"></i></h2>
+            <div id="baking-cooking-grid" class="product-grid">
+                <div class="product-item">
+                    <img src="Images/Baking%20&%20Cooking/baking%20powder.jpg" alt="Mauri Baking Powder">
+                    <label for="Mauri-Baking-Powder">Mauri Baking Powder</label>
+                    <span class="quantity">50g</span>
+                    <span class="price">Rs. 207.00</span>
+                    <input type="number" id="Mauri-Baking-Powder" name="Mauri-Baking-Powder" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Mauri Baking Powder', document.getElementById('Mauri-Baking-Powder').value, 207)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Baking%20&%20Cooking/barbecue%20powder.jpg" alt="Mas Barbecue Powder">
+                    <label for="Mas-Barbecue-Powder">Mas Barbecue Powder</label>
+                    <span class="quantity">50g</span>
+                    <span class="price">Rs. 380.00</span>
+                    <input type="number" id="Mas-Barbecue-Powder" name="Mas-Barbecue-Powder" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Mas Barbecue Powder', document.getElementById('Mas-Barbecue-Powder').value, 380)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Baking%20&%20Cooking/brown%20sugar.jpg" alt="Brown Sugar Bulk">
+                    <label for="Brown-Sugar-Bulk">Brown Sugar Bulk</label>
+                    <span class="quantity">1kg</span>
+                    <span class="price">Rs. 420.00</span>
+                    <input type="number" id="Brown-Sugar-Bulk" name="Brown-Sugar-Bulk" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Brown Sugar Bulk', document.getElementById('Brown-Sugar-Bulk').value, 420)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Baking%20&%20Cooking/Chillie%20powder.jpg" alt="Keells Chillie Powder">
+                    <label for="Keells-Chillie-Powder">Keells Chillie Powder</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 160.00</span>
+                    <input type="number" id="Keells-Chillie-Powder" name="Keells-Chillie-Powder" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Keells Chillie Powder', document.getElementById('Keells-Chillie-Powder').value, 160)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Baking%20&%20Cooking/cinnamon.jpg" alt="Keells Cinnamon Sticks">
+                    <label for="Keells-Cinnamon-Sticks">Keells Cinnamon Sticks</label>
+                    <span class="quantity">25g</span>
+                    <span class="price">Rs. 229.00</span>
+                    <input type="number" id="Keells-Cinnamon-Sticks" name="Keells-Cinnamon-Sticks" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Keells Cinnamon Sticks', document.getElementById('Keells-Cinnamon-Sticks').value, 229)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Baking%20&%20Cooking/cocoa%20powder.jpg" alt="Motha Cocoa Powder">
+                    <label for="Motha-Cocoa-Powder">Motha Cocoa Powder</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 750.00</span>
+                    <input type="number" id="Motha-Cocoa-Powder" name="Motha-Cocoa-Powder" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Motha Cocoa Powder', document.getElementById('Motha-Cocoa-Powder').value, 750)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Baking%20&%20Cooking/coconut%20milkpowder.jp%20g" alt="Maggi Coconut Milk Powder">
+                    <label for="Maggi-Coconut-Milk-Powder">Maggi Coconut Milk Powder</label>
+                    <span class="quantity">300g</span>
+                    <span class="price">Rs. 850.00</span>
+                    <input type="number" id="Maggi-Coconut-Milk-Powder" name="Maggi-Coconut-Milk-Powder" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Maggi Coconut Milk Powder', document.getElementById('Maggi-Coconut-Milk-Powder').value, 850)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Baking%20&%20Cooking/fenugreek.jpg" alt="Mas Fenugreek">
+                    <label for="Mas-Fenugreek">Mas Fenugreek</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 300.00</span>
+                    <input type="number" id="Mas-Fenugreek" name="Mas-Fenugreek" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Mas Fenugreek', document.getElementById('Mas-Fenugreek').value, 300)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Baking%20&%20Cooking/flour.jpg" alt="Wheat Flour Bulk">
+                    <label for="Wheat-Flour-Bulk">Wheat Flour Bulk</label>
+                    <span class="quantity">1kg</span>
+                    <span class="price">Rs. 187.00</span>
+                    <input type="number" id="Wheat-Flour-Bulk" name="Wheat-Flour-Bulk" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Wheat Flour Bulk', document.getElementById('Wheat-Flour-Bulk').value, 187)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Baking%20&%20Cooking/maldive%20fish%20sambol.jpg" alt="Mccurrie Maldive Fish Sambol">
+                    <label for="Mccurrie-Maldive-Fish-Sambol">Mccurrie Maldive Fish Sambol</label>
+                    <span class="quantity">200g</span>
+                    <span class="price">Rs. 2,000.00</span>
+                    <input type="number" id="Mccurrie-Maldive-Fish-Sambol" name="Mccurrie-Maldive-Fish-Sambol" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Mccurrie Maldive Fish Sambol', document.getElementById('Mccurrie-Maldive-Fish-Sambol').value, 2000)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Baking%20&%20Cooking/mayonnaise.jpg" alt="Edinborough Real Mayonnaise Squeeze">
+                    <label for="Edinborough-Real-Mayonnaise-Squeeze">Edinborough Real Mayonnaise Squeeze</label>
+                    <span class="quantity">350g</span>
+                    <span class="price">Rs. 1,150.00</span>
+                    <input type="number" id="Edinborough-Real-Mayonnaise-Squeeze" name="Edinborough-Real-Mayonnaise-Squeeze" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Edinborough Real Mayonnaise Squeeze', document.getElementById('Edinborough-Real-Mayonnaise-Squeeze').value, 1150)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Baking%20&%20Cooking/papadam.jpg" alt="Harischandra Papadam">
+                    <label for="Harischandra-Papadam">Harischandra Papadam</label>
+                    <span class="quantity">70g</span>
+                    <span class="price">Rs. 140.00</span>
+                    <input type="number" id="Harischandra-Papadam" name="Harischandra-Papadam" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Harischandra Papadam', document.getElementById('Harischandra-Papadam').value, 140)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Baking%20&%20Cooking/pepper.jpg" alt="Keells Pepper Seeds">
+                    <label for="Keells-Pepper-Seeds">Keells Pepper Seeds</label>
+                    <span class="quantity">100g</span>
+                    <span class="price">Rs. 415.00</span>
+                    <input type="number" id="Keells-Pepper-Seeds" name="Keells-Pepper-Seeds" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Keells Pepper Seeds', document.getElementById('Keells-Pepper-Seeds').value, 415)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Baking%20&%20Cooking/salt.jpg" alt="Raigam Isi Pure Cooking Salt">
+                    <label for="Raigam-Isi-Pure-Cooking-Salt">Raigam Isi Pure Cooking Salt</label>
+                    <span class="quantity">400g</span>
+                    <span class="price">Rs. 115.00</span>
+                    <input type="number" id="Raigam-Isi-Pure-Cooking-Salt" name="Raigam-Isi-Pure-Cooking-Salt" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Raigam Isi Pure Cooking Salt', document.getElementById('Raigam-Isi-Pure-Cooking-Salt').value, 115)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Baking%20&%20Cooking/vinegar.jpg" alt="Colmans Natural Coconut Water Vinegar">
+                    <label for="Colmans-Natural-Coconut-Water-Vinegar">Colmans Natural Coconut Water Vinegar</label>
+                    <span class="quantity">750ml</span>
+                    <span class="price">Rs. 380.00</span>
+                    <input type="number" id="Colmans-Natural-Coconut-Water-Vinegar" name="Colmans-Natural-Coconut-Water-Vinegar" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('Colmans Natural Coconut Water Vinegar', document.getElementById('Colmans-Natural-Coconut-Water-Vinegar').value, 380)">Add</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="Images/Baking%20&%20Cooking/white%20sugar.jpg" alt="White Sugar Bulk">
+                    <label for="White-Sugar-Bulk">White Sugar Bulk</label>
+                    <span class="quantity">1kg</span>
+                    <span class="price">Rs. 260.00</span>
+                    <input type="number" id="White-Sugar-Bulk" name="White-Sugar-Bulk" min="0" step="1" placeholder="0">
+                    <button onclick="addToCart('White Sugar Bulk', document.getElementById('White-Sugar-Bulk').value, 260)">Add</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Order Summary Table -->
+        <div id="orderSummary">
+            <h2>Order Summary</h2>
+            <table id="orderTable">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Order items will be appended here -->
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">Total</td>
+                        <td id="totalPrice">Rs.0.00</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <a href="Payment.html" class="buy-now-btn" onclick="buyNow()">Buy Now</a>
+            <button onclick="addToFavourites()">Add to Favourites</button>
+            <button onclick="applyFavourites()">Apply Favourites</button>
+        </div>
+    </main>
+
+    <!--Footer section starts-->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="Baking%20and%20Cooking.html">Baking and Cooking Ingredients</a></li>
+                        <li><a href="Dairy%20Product.html">Dairy Products</a></li>
+                        <li><a href="Fruits.html">Fruits</a></li>
+                        <li><a href= "Meat%20and%20Seafood.html">Meat and Seafood</a></li>
+                        <li><a href="Vegetables.html">Vegetables</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="Index.html">Home</a></li>
+                        <li><a href="Order.html">Order</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms and Conditions</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="About.html">Contact Us</a></li>
+                        <li><a href="About.html">About Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://web.facebook.com/"><i class="fab fa-facebook"></i></a>
+                        <a href="https://x.com/?lang=en"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://lk.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p >Copyright &copy; 2024 Wave Mart.All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!--Footer section ends-->
+
+    <script src="Order.js"></script>
+</body>
+</html>
